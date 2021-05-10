@@ -1,0 +1,21 @@
+@import "./_varaiables.scss";
+
+#container-modal {
+  .title {
+  }
+
+  input {
+  }
+
+  button {
+  }
+}
+
+#background-modal {
+  height: 100%;
+  width: 100%;
+  background: $color-background-modal;
+}
+
+@media (max-width: 768px) {
+}

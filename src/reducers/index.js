@@ -1,7 +1,8 @@
-import { combineReducers } from "react-redux";
+import { combineReducers } from "redux";
+import tempReducer from "./tempReducer";
 
 const rootReducer = combineReducers({
-  // reducers...
+  tempReducer,
 });
 
 export default rootReducer;
