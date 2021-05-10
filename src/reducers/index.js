@@ -1,8 +1,10 @@
-import { combineReducers } from "redux";
-import tempReducer from "./tempReducer";
+import { combineReducers } from "@reduxjs/toolkit";
+import modalStatusReducer from "./modalStatusReducer";
+import filterCheckedReducer from "./filterCheckedReducer";
 
 const rootReducer = combineReducers({
-  tempReducer,
+  modalStatusReducer,
+  filterCheckedReducer,
 });
 
 export default rootReducer;

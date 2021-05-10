@@ -1,4 +1,4 @@
-import { compose, createStore, applyMiddleware } from "redux";
+import { compose, createStore, applyMiddleware } from "@reduxjs/toolkit";
 import rootReducer from "../reducers/index.js";
 
 // TODO 필요한 MiddleWare는 배열 안에 넣으세요.

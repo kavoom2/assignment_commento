@@ -1,3 +1,6 @@
-export const initialState = {
-  temp: null,
+const initialState = {
+  modalStatus: false,
+  filterChecked: [],
 };
+
+export default initialState;

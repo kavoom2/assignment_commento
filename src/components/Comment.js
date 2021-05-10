@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Ads() {
+export default function Comment() {
   return (
     <div className="container-comment">
       <div className="header">reply_user_name</div>

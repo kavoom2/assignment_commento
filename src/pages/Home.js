@@ -1,11 +1,24 @@
 import { useHistory } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Ads from "../components/Ads";
 import Feed from "../components/Feed";
 import Nav from "../components/Nav";
+import { Actions } from "../actions/index";
 import "../scss/home.scss";
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  const [isLoading, setIsLoading] = useState(true);
+  const modalStatus = useSelector((s) => s.modalStatusReducer.modalStatus);
+
+  const handleModalStatus = (status) => {
+    dispatch(Actions.setModalStatus(status));
+  };
+
+  useEffect(() => {});
+
   return (
     <React.Fragment>
       <Nav />
@@ -20,7 +33,9 @@ export default function Home() {
               <button>오름차순</button>
               <button className="active">내림차순</button>
             </div>
-            <button id="filter">필터</button>
+            <button id="filter" onClick={() => handleModalStatus(true)}>
+              필터
+            </button>
           </div>
           <Feed />
           <Feed />

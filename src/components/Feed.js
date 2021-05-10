@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Comment() {
+export default function Feed() {
   return (
     <div className="container-feed">
       <div className="category">

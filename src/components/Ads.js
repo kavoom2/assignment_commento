@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-export default function Feed() {
+export default function Ads() {
   return (
     <div className="container-ads">
       <div className="header">sponsored</div>
       <div className="section">
         <div className="img-container">
-          <img placeholder="img" />
+          <img url="" placeholder="img" />
         </div>
         <div className="article">
           <div className="title">

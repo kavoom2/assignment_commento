@@ -4,7 +4,7 @@ import Comment from "../components/Ads";
 import Nav from "../components/Nav";
 import "../scss/mainPage.scss";
 
-export default function Home(props) {
+export default function MainPage(props) {
   useEffect(() => {
     console.log(props);
     console.log(props.match.params.id);
