@@ -1,6 +1,6 @@
 const initialState = {
   modalStatus: false,
-  filterChecked: [],
+  categories: [],
 };
 
 export default initialState;

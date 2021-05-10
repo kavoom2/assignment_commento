@@ -5,17 +5,80 @@ import "../scss/modal.scss";
 
 export default function Modal() {
   const dispatch = useDispatch();
-  const modalStatus = useSelector((s) => s.modalStatusReducer.modalStatus);
+  const categories = useSelector((s) => s.categoriesReducer.categories);
+  const [checkedCategories, setCheckedCategories] = useState([]);
+
+  useEffect(() => {
+    const checkedIds = categories
+      .filter((el) => {
+        if (el.checked) return true;
+        else return false;
+      })
+      .map((el) => {
+        return el.id;
+      });
+    setCheckedCategories(checkedIds);
+  }, []);
 
   const handleModalStatus = (status) => {
     dispatch(Actions.setModalStatus(status));
   };
 
-  if (!modalStatus) return "";
+  const handleBackgroundEvent = (event) => {
+    if (event.target.id === "background-modal")
+      dispatch(Actions.setModalStatus(false));
+  };
+
+  const handleConfirm = () => {
+    const newCategories = categories.map((el) => {
+      const id = el.id;
+      if (checkedCategories.includes(id)) {
+        return { id: el.id, name: el.name, checked: true };
+      } else {
+        return { id: el.id, name: el.name, checked: false };
+      }
+    });
+
+    dispatch(Actions.setCategories(newCategories));
+    dispatch(Actions.setModalStatus(false));
+  };
+
+  const handleOnChange = () => {
+    const nodes = [...document.getElementsByClassName("modal-checkbox")];
+    const checkedIds = nodes
+      .filter((node) => {
+        if (node.checked) return true;
+        else return false;
+      })
+      .map((node) => {
+        return Number(node.value);
+      });
+
+    setCheckedCategories(checkedIds);
+  };
+
+  const renderCategories = () => {
+    return categories.map((el) => {
+      const { id, name, checked } = el;
+      return (
+        <label key={id}>
+          <input
+            className="modal-checkbox"
+            type="checkbox"
+            name={name}
+            value={id}
+            defaultChecked={checked ? true : false}
+            onChange={handleOnChange}
+          />
+          {name}
+        </label>
+      );
+    });
+  };
 
   return (
     <>
-      <div id="background-modal">
+      <div id="background-modal" onClick={handleBackgroundEvent}>
         <div id="container-modal">
           <div className="header">
             <button onClick={() => handleModalStatus(false)}>X</button>
@@ -23,24 +86,11 @@ export default function Modal() {
 
           <div className="section">
             <div className="title">필터</div>
-
-            <label>
-              <input type="checkbox" name="name" value="value" defaultChecked />
-              checkbox name
-            </label>
-
-            <label>
-              <input type="checkbox" name="name" value="value" defaultChecked />
-              checkbox name
-            </label>
-
-            <label>
-              <input type="checkbox" name="name" value="value" defaultChecked />
-              checkbox name
-            </label>
+            {renderCategories()}
           </div>
+
           <div className="footer">
-            <button>저장하기</button>
+            <button onClick={handleConfirm}>저장하기</button>
           </div>
         </div>
       </div>
