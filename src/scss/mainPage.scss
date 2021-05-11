@@ -67,6 +67,9 @@
 }
 
 @media (max-width: 768px) {
+  .main-page {
+    background: $color-background !important;
+  }
   #container-post {
     border-left: none;
     border-right: none;

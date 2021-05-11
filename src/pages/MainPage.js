@@ -53,7 +53,7 @@ export default function MainPage(props) {
     <React.Fragment>
       <Nav />
       <div id="section">
-        <div id="section-right">
+        <div id="section-right" className="main-page">
           <div id="container-post">
             <div className="title">{feed.title}</div>
             <div className="contents">{feed.contents}</div>
