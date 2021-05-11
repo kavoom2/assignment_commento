@@ -1,3 +1,5 @@
+@import "./_varaiables.scss";
+
 html {
   box-sizing: border-box;
   font-size: 10px;
@@ -25,4 +27,22 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+#navigator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+
+  box-shadow: 0rem 0.1rem 0.5rem #00000012;
+  margin-bottom: 5rem;
+  span {
+    margin-left: 39rem;
+    margin-right: 39rem;
+    width: 100%;
+    min-width: 70rem;
+    color: $color-text-header;
+    font-size: $font-size-H3;
+  }
 }

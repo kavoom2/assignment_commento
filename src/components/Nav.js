@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Nav() {
-  return <div id="header">[5월 13일] 정진규</div>;
+  return (
+    <div id="navigator">
+      <span>[5월 13일] 정진규</span>
+    </div>
+  );
 }

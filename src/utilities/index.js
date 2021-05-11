@@ -9,8 +9,7 @@ export const Fetches = {
         header: { Accept: "application/json" },
       })
       .then((data) => {
-        console.log(data.data);
-        return data.data;
+        return data.data.data;
       })
       .catch((err) => console.log(err));
   },
@@ -18,8 +17,18 @@ export const Fetches = {
     return axios
       .get(`${url}/category`)
       .then((data) => {
-        console.log(data.data.category);
         return data.data.category;
+      })
+      .catch((err) => console.log(err));
+  },
+  getAds: (page, limit) => {
+    return axios
+      .get(`${url}/ads`, {
+        params: { page, limit },
+        header: { Accept: "application/json" },
+      })
+      .then((data) => {
+        return data.data.data;
       })
       .catch((err) => console.log(err));
   },

@@ -1,30 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-export default function Ads() {
+export default function Ads({ id, title, contents, img }) {
   return (
     <div className="container-ads">
       <div className="header">sponsored</div>
       <div className="section">
         <div className="img-container">
-          <img url="" placeholder="img" />
+          <img src={`https://cdn.comento.kr/assignment/${img}`} alt={img} />
         </div>
         <div className="article">
-          <div className="title">
-            Title Title Title Title Title Title Title Title Title Title Title
-            Title Title Title Title Title Title Title Title Title Title Title
-            Title Title Title Title Title Title Title Title Title Title Title
-            Title Title Title Title Title Title Title Title Title Title Title
-            Title
-          </div>
-          <div className="contents">
-            contents contents contents contents contents contents contens
-            contents contents contents contents contents contents contents
-            contens contents contents contents contents contents contents
-            contents contens contents contents contents contents contents
-            contents contents contens contents contents contents contents
-            contents contents contents contens contents contents contents
-            contents contents contents contents contens contents
-          </div>
+          <div className="title">{title}</div>
+          <div className="contents">{contents}</div>
         </div>
       </div>
     </div>
