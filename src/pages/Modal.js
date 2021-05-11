@@ -9,6 +9,15 @@ export default function Modal() {
   const [checkedCategories, setCheckedCategories] = useState([]);
 
   useEffect(() => {
+    // 스크롤 이벤트를 방지합니다.
+    document.body.style.overflowY = "hidden";
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  });
+
+  useEffect(() => {
+    // 선택된 카테고리를 업데이트합니다.
     const checkedIds = categories
       .filter((el) => {
         if (el.checked) return true;
@@ -18,7 +27,7 @@ export default function Modal() {
         return el.id;
       });
     setCheckedCategories(checkedIds);
-  }, []);
+  }, [categories]);
 
   const handleModalStatus = (status) => {
     dispatch(Actions.setModalStatus(status));

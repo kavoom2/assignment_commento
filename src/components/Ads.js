@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-
-export default function Ads({ id, title, contents, img }) {
+export default function Ads({ title, contents, img }) {
   return (
     <div className="container-ads">
       <div className="header">sponsored</div>

@@ -32,4 +32,15 @@ export const Fetches = {
       })
       .catch((err) => console.log(err));
   },
+  getFeed: (id) => {
+    return axios
+      .get(`${url}/view`, {
+        params: { id },
+        header: { Accept: "application/json" },
+      })
+      .then((data) => {
+        return data.data.data;
+      })
+      .catch((err) => console.log(err));
+  },
 };

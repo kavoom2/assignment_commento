@@ -46,3 +46,16 @@ button:hover {
     font-size: $font-size-H3;
   }
 }
+
+@media (max-width: 768px) {
+  #navigator {
+    height: 4.5rem;
+    box-shadow: 0rem 0.2rem 0.3rem #00000012;
+    margin-bottom: 0rem;
+    span {
+      margin: 0rem;
+      min-width: auto;
+      padding-left: 1.5rem;
+    }
+  }
+}

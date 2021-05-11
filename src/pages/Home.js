@@ -106,12 +106,12 @@ export default function Home({ history }) {
     };
 
     asyncFunc();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     // 카테고리, 필터 변경시 목록 불러오기
     getItems(8, 2, 1, 1, true, 10);
-  }, [categories, order]);
+  }, [categories, order]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // 스크롤 이벤트 헨들러 등록 및 삭제
@@ -130,7 +130,7 @@ export default function Home({ history }) {
   useEffect(() => {
     // 스크롤 최대치 도달시 렌더링 이벤트
     if (isEnd) getItems(feedPages, adsPages, 2, 2, false, 10);
-  }, [isEnd]);
+  }, [isEnd]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleOrder = (order) => {
     setOrder(order);
@@ -142,7 +142,6 @@ export default function Home({ history }) {
 
   const handleHistoryEvent = (id) => {
     history.push(`/${id}`);
-    console.log(id);
   };
 
   const renderLists = () => {
