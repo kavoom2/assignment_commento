@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Comment from "../components/Comment";
-import Nav from "../components/Nav";
+import NavMainPage from "../components/NavMainPage";
 import { Fetches } from "../utilities/index";
 import "../scss/mainPage.scss";
 
@@ -42,7 +42,7 @@ export default function MainPage(props) {
   if (Object.keys(feed).length === 0)
     return (
       <React.Fragment>
-        <Nav />
+        <NavMainPage />
         <div id="section">
           <div id="section-right"></div>
         </div>
@@ -51,7 +51,7 @@ export default function MainPage(props) {
 
   return (
     <React.Fragment>
-      <Nav />
+      <NavMainPage />
       <div id="section">
         <div id="section-right" className="main-page">
           <div id="container-post">

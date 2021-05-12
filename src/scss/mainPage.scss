@@ -67,8 +67,23 @@
 }
 
 @media (max-width: 768px) {
-  .main-page {
+  #navigator.main-page {
+    .container {
+      span {
+        display: none;
+      }
+      button {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #282c30;
+        background: transparent;
+        display: inline;
+      }
+    }
+  }
+  #section-right.main-page {
     background: $color-background !important;
+    padding-top: 2rem;
   }
   #container-post {
     border-left: none;

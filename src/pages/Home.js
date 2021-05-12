@@ -193,18 +193,28 @@ export default function Home({ history }) {
         <div id="section-right">
           <div id="container-controller">
             <div id="sorter">
-              <button
-                className={order === "asc" ? "active" : ""}
-                onClick={() => handleOrder("asc")}
-              >
-                오름차순
-              </button>
-              <button
-                className={order === "desc" ? "active" : ""}
-                onClick={() => handleOrder("desc")}
-              >
-                내림차순
-              </button>
+              <span className="btn-sort">
+                <span
+                  className={order === "asc" ? "marker active" : "marker"}
+                />
+                <button
+                  className={order === "asc" ? "active" : ""}
+                  onClick={() => handleOrder("asc")}
+                >
+                  오름차순
+                </button>
+              </span>
+              <span className="btn-sort">
+                <span
+                  className={order === "desc" ? "marker active" : "marker"}
+                />
+                <button
+                  className={order === "desc" ? "active" : ""}
+                  onClick={() => handleOrder("desc")}
+                >
+                  내림차순
+                </button>
+              </span>
             </div>
             <button id="filter" onClick={() => handleModalStatus(true)}>
               필터

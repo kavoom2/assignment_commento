@@ -32,16 +32,30 @@
       justify-content: space-between;
       margin-bottom: 1rem;
       #sorter {
-        button {
-          font-size: $font-size-H4;
-          color: $color-text-filter;
+        .btn-sort {
+          margin-right: 1rem;
+          .marker {
+            height: 0.6rem;
+            width: 0.6rem;
+            background: $color-text-filter;
+            border-radius: 50%;
+            display: inline-block;
 
-          background: none;
-          border: none;
-          outline: none;
+            &.active {
+              background: $color-text-highlight;
+            }
+          }
+          button {
+            font-size: $font-size-H4;
+            color: $color-text-filter;
 
-          &.active {
-            color: $color-text-filter-active;
+            background: none;
+            border: none;
+            outline: none;
+
+            &.active {
+              color: $color-text-filter-active;
+            }
           }
         }
       }
@@ -262,6 +276,7 @@
           min-width: 100% !important;
           height: calc(100vw * 0.58) !important;
           min-height: calc(100vw * 0.58) !important;
+          margin-bottom: 1.65rem;
 
           img {
             height: auto !important;

@@ -37,22 +37,26 @@ button:hover {
 
   box-shadow: 0rem 0.1rem 0.5rem #00000012;
   margin-bottom: 5rem;
-  span {
+  .container {
     margin-left: 39rem;
     margin-right: 39rem;
     width: 100%;
     min-width: 70rem;
     color: $color-text-header;
     font-size: $font-size-H3;
+
+    button {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 768px) {
   #navigator {
     height: 4.5rem;
-    box-shadow: 0rem 0.2rem 0.3rem #00000012;
-    margin-bottom: 0rem;
-    span {
+    box-shadow: 0px 2px 3px #00000012;
+    margin-bottom: 0.2rem;
+    .container {
       margin: 0rem;
       min-width: auto;
       padding-left: 1.5rem;
