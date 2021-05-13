@@ -72,10 +72,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background: rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 768px) {
+  #back-ground-modal {
+  }
+
+  #container-modal {
+    position: absolute;
+    top: 20vh;
+    width: 80vw;
+    min-width: auto;
+    max-width: 38rem;
+
+    .footer {
+      button {
+        width: 100%;
+      }
+    }
+  }
 }
